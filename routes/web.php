@@ -35,6 +35,19 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/reporting', [UploadController::class, 'uploadReporting'])->name('uploadReporting');
+Route::get('/reporting', [UploadController::class, 'upload'])->name('upload');
 
 Route::post('/reportingStore', [UploadController::class, 'uploadReportingStore'])->name('uploadReportingStore');
+
+Route::post('/leaveStore', [UploadController::class, 'uploadLeaveStore'])->name('uploadLeaveStore');
+
+
+Route::get('/reportingShow', [UploadController::class, 'reportingShow'])->name('reporting.show');
+
+
+Route::get('/leaveShow', [UploadController::class, 'leaveShow'])->name('leave.show');
+
+
+// Route::get('/viewReporting', function () {
+//     return Inertia::render('Reporting');
+// })->name('reporting');
